@@ -1,0 +1,33 @@
+{
+  "name": "blog-app-backend",
+  "version": "1.0.0",
+  "description": "Backend for MERN blog application",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "format": "npx prettier --write \"**/*.{js,json,md}\"",
+    "format:check": "npx prettier --check \"**/*.{js,json,md}\""
+  },
+  "keywords": [
+    "mern",
+    "blog",
+    "backend"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.8.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "prettier": "^2.8.8"
+  }
+}
