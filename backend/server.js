@@ -18,7 +18,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 mongoose
-  .connect(process.env.MONGO_URI, {
+  .connect(process.env.MONGO_URI || process.env.MONGO_URL, {
   })
   .then(() => console.info("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
