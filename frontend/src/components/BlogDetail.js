@@ -76,7 +76,8 @@ const BlogDetail = () => {
           try {
             const res = await axios.post(
               `https://blog-application-backend-zbcq.onrender.com/api/comments/${id}`,
-              { content: newComment }
+              { content: newComment },
+              { withCredentials: true }
             );
             setComments([res.data, ...comments]);
             setNewComment("");

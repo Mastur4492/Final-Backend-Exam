@@ -13,6 +13,7 @@ const Dashboard = () => {
     const fetchBlogs = async () => {
       try {
         const res = await axios.get("https://blog-application-backend-zbcq.onrender.com/api/blogs/myblogs", {
+          withCredentials: true,
           // headers: { Authorization: `Bearer ${token}` }, // Handled by cookie
         });
         setBlogs(res.data);
@@ -29,6 +30,7 @@ const Dashboard = () => {
     if (window.confirm("Are you sure you want to delete this blog?")) {
       try {
         await axios.delete(`https://blog-application-backend-zbcq.onrender.com/api/blogs/${id}`, {
+          withCredentials: true,
           // headers: { Authorization: `Bearer ${token}` },
         });
         setBlogs(blogs.filter((blog) => blog._id !== id));
@@ -51,7 +53,8 @@ const Dashboard = () => {
         {
           title: editTitle,
           content: editContent,
-        }
+        },
+        { withCredentials: true }
       );
       setBlogs(blogs.map((blog) => (blog._id === id ? response.data : blog)));
       setEditing(null);

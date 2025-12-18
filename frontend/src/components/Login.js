@@ -20,7 +20,8 @@ const Login = ({ onLogin }) => {
     try {
       const res = await axios.post(
         "https://blog-application-backend-zbcq.onrender.com/api/auth/login",
-        formData
+        formData,
+        { withCredentials: true }
       );
       // localStorage.setItem("token", res.data.token); // No longer needed with cookies
       localStorage.setItem("userRole", res.data.role);

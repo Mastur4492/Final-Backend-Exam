@@ -21,7 +21,8 @@ const Register = ({ onLogin }) => {
     try {
       const res = await axios.post(
         "https://blog-application-backend-zbcq.onrender.com/api/auth/register",
-        formData
+        formData,
+        { withCredentials: true }
       );
       // localStorage.setItem("token", res.data.token);
       localStorage.setItem("userRole", res.data.role);

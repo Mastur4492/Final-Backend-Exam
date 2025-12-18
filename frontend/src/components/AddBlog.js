@@ -18,9 +18,9 @@ const AddBlog = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem("token");
+      // const token = localStorage.getItem("token");
       await axios.post("https://blog-application-backend-zbcq.onrender.com/api/blogs", formData, {
-        headers: { Authorization: `Bearer ${token}` },
+        withCredentials: true,
       });
       navigate("/dashboard");
     } catch (err) {
