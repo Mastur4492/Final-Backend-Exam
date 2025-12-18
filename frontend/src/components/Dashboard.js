@@ -12,7 +12,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/blogs/myblogs", {
+        const res = await axios.get("https://blog-application-backend-zbcq.onrender.com/api/blogs/myblogs", {
           // headers: { Authorization: `Bearer ${token}` }, // Handled by cookie
         });
         setBlogs(res.data);
@@ -28,7 +28,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this blog?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/blogs/${id}`, {
+        await axios.delete(`https://blog-application-backend-zbcq.onrender.com/api/blogs/${id}`, {
           // headers: { Authorization: `Bearer ${token}` },
         });
         setBlogs(blogs.filter((blog) => blog._id !== id));
@@ -47,7 +47,7 @@ const Dashboard = () => {
   const handleUpdate = async (id) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/blogs/${id}`,
+        `https://blog-application-backend-zbcq.onrender.com/api/blogs/${id}`,
         {
           title: editTitle,
           content: editContent,

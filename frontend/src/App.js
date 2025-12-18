@@ -35,7 +35,7 @@ function App() {
     // Check session on load
     const checkSession = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/auth/profile");
+        const res = await axios.get("https://blog-application-backend-zbcq.onrender.com/api/auth/profile");
         setIsAuthenticated(true);
         setUserRole(res.data.role);
         localStorage.setItem("isLoggedIn", "true");

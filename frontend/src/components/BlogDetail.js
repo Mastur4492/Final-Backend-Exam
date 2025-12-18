@@ -15,11 +15,11 @@ const BlogDetail = () => {
   useEffect(() => {
     const fetchBlogAndComments = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/blogs/${id}`);
+        const res = await axios.get(`https://blog-application-backend-zbcq.onrender.com/api/blogs/${id}`);
         setBlog(res.data);
 
         try {
-          const commentsRes = await axios.get(`http://localhost:5000/api/comments/${id}`);
+          const commentsRes = await axios.get(`https://blog-application-backend-zbcq.onrender.com/api/comments/${id}`);
           setComments(commentsRes.data);
         } catch (err) {
           console.error("Error fetching comments:", err);
@@ -36,7 +36,7 @@ const BlogDetail = () => {
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this blog?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/blogs/${id}`, { withCredentials: true });
+        await axios.delete(`https://blog-application-backend-zbcq.onrender.com/api/blogs/${id}`, { withCredentials: true });
         alert("Blog deleted successfully");
         navigate("/");
       } catch (err) {
@@ -75,7 +75,7 @@ const BlogDetail = () => {
           e.preventDefault();
           try {
             const res = await axios.post(
-              `http://localhost:5000/api/comments/${id}`,
+              `https://blog-application-backend-zbcq.onrender.com/api/comments/${id}`,
               { content: newComment }
             );
             setComments([res.data, ...comments]);

@@ -9,7 +9,7 @@ const BlogList = ({ isAuthenticated }) => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/blogs");
+        const res = await axios.get("https://blog-application-backend-zbcq.onrender.com/api/blogs");
         setBlogs(res.data);
       } catch (err) {
         console.error(err);
@@ -61,7 +61,7 @@ const BlogList = ({ isAuthenticated }) => {
                       if (window.confirm("Admin Action: Delete this blog?")) {
                         try {
                           await axios.delete(
-                            `http://localhost:5000/api/blogs/${blog._id}`,
+                            `https://blog-application-backend-zbcq.onrender.com/api/blogs/${blog._id}`,
                             { withCredentials: true }
                           );
                           setBlogs(blogs.filter((b) => b._id !== blog._id));

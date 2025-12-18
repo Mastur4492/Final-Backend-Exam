@@ -11,7 +11,7 @@ const Navbar = ({ onLogout, userRole }) => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/logout",
+        "https://blog-application-backend-zbcq.onrender.com/api/auth/logout",
         {},
         {
           withCredentials: true,

@@ -19,7 +19,7 @@ const AddBlog = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      await axios.post("http://localhost:5000/api/blogs", formData, {
+      await axios.post("https://blog-application-backend-zbcq.onrender.com/api/blogs", formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       navigate("/dashboard");
