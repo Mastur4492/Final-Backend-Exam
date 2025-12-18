@@ -5,6 +5,7 @@ const auth = (req, res, next) => {
     req.cookies.token || req.header("Authorization")?.replace("Bearer ", "");
 
   if (!token) {
+    console.log("Auth Middleware: No token found in cookies or header");
     return res.status(401).json({ message: "No token, authorization denied" });
   }
 
@@ -14,6 +15,7 @@ const auth = (req, res, next) => {
     req.role = decoded.role; // Store role for RBAC
     next();
   } catch (err) {
+    console.error("Auth Middleware: Token verification failed:", err.message);
     res.status(401).json({ message: "Token is not valid" });
   }
 };

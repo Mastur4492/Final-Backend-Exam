@@ -6,6 +6,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
+// Trust proxy is required for secure cookies on Render/Heroku
+app.set("trust proxy", 1);
 
 const cookieParser = require("cookie-parser");
 
