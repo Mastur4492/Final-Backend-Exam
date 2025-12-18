@@ -20,7 +20,7 @@ A full-stack blog application built with the MERN (MongoDB, Express, React, Node
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Mastur4492/Final-Backend-Exam.git
    ```
 
 2. **Backend Setup**
